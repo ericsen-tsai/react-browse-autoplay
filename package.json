@@ -1,23 +1,17 @@
 {
-  "name": "@erichandsen/react-browse-autoplay",
-  "version": "0.0.0",
-  "description": "A React component that automatically plays videos in a browser.",
-  "main": "index.js",
-  "scripts": {
-    "format": "biome format . --write",
-    "lint": "biome lint .",
-    "check": "biome check .",
-    "test": "vitest run",
-    "test:ui": "vitest --ui",
-    "build": "rolldown --config rolldown.config.mjs",
-    "prepare": "husky",
-    "version": "changeset version",
-    "release": "changeset publish"
-  },
-  "keywords": [],
-  "author": "Ericsen Tsai",
-  "license": "ISC",
+  "name": "react-browse-autoplay-monorepo",
+  "private": true,
+  "description": "Monorepo for react-browse-autoplay and demo page",
   "packageManager": "pnpm@10.12.4",
+  "scripts": {
+    "dev:demo": "pnpm --filter demo dev",
+    "build:package": "pnpm --filter @erichandsen/react-browse-autoplay build",
+    "build:demo": "pnpm --filter demo build",
+    "test:package": "pnpm --filter @erichandsen/react-browse-autoplay test",
+    "format": "pnpm -r run format",
+    "lint": "pnpm -r run lint",
+    "check": "pnpm -r run check"
+  },
   "devDependencies": {
     "@biomejs/biome": "^2.0.6",
     "@changesets/cli": "^2.29.5",
@@ -25,17 +19,17 @@
     "@commitlint/types": "^19.8.1",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
-    "@vitest/coverage-v8": "^3.2.4",
-    "@vitest/ui": "^3.2.4",
+    "@vitejs/plugin-react": "^4.5.2",
     "commitlint": "^19.8.1",
     "husky": "^9.1.7",
     "jsdom": "^26.1.0",
     "lint-staged": "^16.1.2",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
     "rolldown": "^1.0.0-beta.23",
     "typescript": "^5.8.3",
-    "vitest": "^3.2.4"
+    "vite": "^7.0.0",
+    "vitest": "^3.2.4",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json}": [

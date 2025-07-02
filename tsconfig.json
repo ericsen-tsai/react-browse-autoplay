@@ -1,17 +1,13 @@
 {
+  "files": [],
+  "references": [{ "path": "./packages/react-browse-autoplay" }, { "path": "./examples/demo" }],
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "declaration": true,
-    "declarationDir": "dist/types",
-    "outDir": "dist",
-    "jsx": "react-jsx",
     "moduleResolution": "Node",
+    "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+    "forceConsistentCasingInFileNames": true
+  }
 }

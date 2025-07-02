@@ -1,0 +1,33 @@
+{
+  "name": "@erichandsen/react-browse-autoplay",
+  "version": "0.0.0",
+  "description": "A React component that automatically plays videos in a browser.",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "build": "rolldown --config rolldown.config.mjs",
+    "test": "vitest run",
+    "test:ui": "vitest --ui",
+    "release": "changeset publish",
+    "check": "biome check .",
+    "format": "biome format --write",
+    "lint": "biome lint ."
+  },
+  "keywords": [],
+  "author": "Ericsen Tsai",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.4",
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
