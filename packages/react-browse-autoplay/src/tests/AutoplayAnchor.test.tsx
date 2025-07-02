@@ -5,7 +5,7 @@ import AutoplayAnchor from '../components/AutoplayAnchor';
 import { useBrowseAutoplay } from '../components/BrowseAutoplayContext';
 
 // Mock the context hook
-vi.mock('../src/components/BrowseAutoplayContext', () => ({
+vi.mock('../components/BrowseAutoplayContext', () => ({
   useBrowseAutoplay: vi.fn(),
 }));
 
@@ -24,6 +24,7 @@ describe('AutoplayAnchor', () => {
       onToggleEnabledAutoplay: vi.fn(),
       audioPath: '',
       onAudioPathChange: vi.fn(),
+      isPlaying: false,
     });
   });
 

@@ -17,7 +17,7 @@
   "private": false,
   "type": "module",
   "scripts": {
-    "build": "rimraf dist && tsc --project tsconfig.json && rolldown --config rolldown.config.mjs",
+    "build": "rimraf dist && tsc --project tsconfig.json && rolldown --config rolldown.config.ts",
     "test": "vitest run",
     "test:ui": "vitest --ui",
     "release": "changeset publish",

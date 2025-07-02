@@ -9,6 +9,7 @@ type BrowseAutoplayContextType = {
   audioPath: string;
   onAudioPathChange: (path: string) => void;
   registerAnchorRef: (anchorType: AnchorType, ref: React.RefObject<HTMLDivElement | null>) => void;
+  isPlaying: boolean;
 };
 
 const BrowseAutoplayContext = createContext<BrowseAutoplayContextType | undefined>(undefined);
@@ -29,7 +30,7 @@ const BrowseAutoplayProvider = ({
   initialAudioPath?: string;
 }) => {
   const audioRef = useRef<HTMLAudioElement>(null);
-
+  const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const onToggleMuted = useCallback(() => setIsMuted((prev) => !prev), []);
 
@@ -56,11 +57,13 @@ const BrowseAutoplayProvider = ({
       if (!isInInterval && isBetween) {
         setIsInInterval(true);
         audioRef.current.play();
+        setIsPlaying(true);
       }
 
       if (isInInterval && !isBetween) {
         setIsInInterval(false);
         audioRef.current.pause();
+        setIsPlaying(false);
       }
     }
 
@@ -87,6 +90,7 @@ const BrowseAutoplayProvider = ({
           audioPath,
           onAudioPathChange,
           registerAnchorRef,
+          isPlaying,
         }),
         [
           isMuted,
@@ -96,6 +100,7 @@ const BrowseAutoplayProvider = ({
           onToggleEnabledAutoplay,
           onAudioPathChange,
           registerAnchorRef,
+          isPlaying,
         ],
       )}
     >
