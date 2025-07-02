@@ -12,7 +12,8 @@
     "lint": "pnpm -r run lint",
     "check": "pnpm -r run check",
     "tsc": "pnpm -r run tsc",
-    "preinstall": "npx --yes only-allow pnpm"
+    "preinstall": "npx --yes only-allow pnpm",
+    "release": "changeset publish"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.0.6",
