@@ -8,11 +8,7 @@ export default defineConfig({
       format: 'esm',
       sourcemap: true,
     },
-    {
-      dir: 'dist',
-      format: 'cjs',
-      sourcemap: true,
-    },
   ],
-  external: ['react', 'react-dom'],
+  external: ['react', 'react-dom', 'react/jsx-runtime', 'react/jsx-dev-runtime'],
+  target: 'esnext',
 });

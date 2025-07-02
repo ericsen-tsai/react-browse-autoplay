@@ -1,22 +1,15 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
   "files": {
-    "includes": [
-      "packages/react-browse-autoplay/*.{js,jsx,ts,tsx}",
-      "examples/demo/*.{js,jsx,ts,tsx}",
-      "*.json",
-      "*.mjs",
-      "*.cjs",
-      "*.ts",
-      "*.tsx",
-      "*.js",
-      "*.jsx"
-    ]
+    "includes": ["**/*.{js,jsx,ts,tsx}", "*.json", "*.mjs", "*.cjs", "*.ts", "*.tsx", "*.js", "*.jsx"]
   },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "correctness": {
+        "noUnusedImports": "error"
+      }
     },
     "domains": {
       "react": "recommended"

@@ -10,7 +10,8 @@
     "test:package": "pnpm --filter @erichandsen/react-browse-autoplay test",
     "format": "pnpm -r run format",
     "lint": "pnpm -r run lint",
-    "check": "pnpm -r run check"
+    "check": "pnpm -r run check",
+    "preinstall": "npx --yes only-allow pnpm"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.0.6",

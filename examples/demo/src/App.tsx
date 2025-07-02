@@ -1,35 +1,31 @@
-import { useState } from "react";
-import viteLogo from "/vite.svg";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
+import './App.css';
+import { AutoplayAnchor, useBrowseAutoplay } from '@erichandsen/react-browse-autoplay';
 
 function App() {
-	const [count, setCount] = useState(0);
+  const { isMuted, onToggleMuted, isEnabledAutoplay, onToggleEnabledAutoplay } = useBrowseAutoplay();
 
-	return (
-		<>
-			<div>
-				<a href="https://vite.dev" target="_blank" rel="noopener">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://react.dev" target="_blank" rel="noopener">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button onClick={() => setCount((count) => count + 1)} type="button">
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Vite and React logos to learn more
-			</p>
-		</>
-	);
+  return (
+    <>
+      <button
+        onClick={() => onToggleMuted()}
+        type="button"
+        style={{ position: 'fixed', bottom: 20, left: 20, zIndex: 1000 }}
+      >
+        {isMuted ? 'Unmute' : 'Mute'}
+      </button>
+      <button onClick={() => onToggleEnabledAutoplay()} type="button">
+        {isEnabledAutoplay ? 'Disable' : 'Enable'}
+      </button>
+      <h1>React Browse Autoplay</h1>
+      <div style={{ height: '100vh' }}></div>
+      <AutoplayAnchor type="top" />
+      <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        {isEnabledAutoplay ? 'Autoplay Enabled' : 'Autoplay Disabled'}
+      </div>
+      <AutoplayAnchor type="bottom" />
+      <div style={{ height: '100vh' }}></div>
+    </>
+  );
 }
 
 export default App;

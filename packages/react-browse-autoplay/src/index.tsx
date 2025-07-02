@@ -1,5 +1,2 @@
-function ExampleComponent() {
-  return <div>Hello from ExampleComponent!</div>;
-}
-
-export default ExampleComponent;
+export * from './components';
+export * from './types';
