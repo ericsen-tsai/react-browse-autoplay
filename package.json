@@ -13,7 +13,8 @@
     "check": "pnpm -r run check",
     "tsc": "pnpm -r run tsc",
     "preinstall": "npx --yes only-allow pnpm",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "version": "changeset version"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.0.6",
