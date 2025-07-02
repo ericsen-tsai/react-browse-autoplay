@@ -11,6 +11,10 @@ A React component library that automatically plays audio when users scroll betwe
 - 🎯 **Precise control** - Audio plays when the viewport center is between anchors
 - 🔄 **Automatic pause** - Audio pauses when scrolling outside the defined area
 
+## 🌐 Live Demo
+
+Try the interactive demo: **[https://erichandsen.github.io/react-browse-autoplay/](https://erichandsen.github.io/react-browse-autoplay/)**
+
 ## Installation
 
 ```bash
