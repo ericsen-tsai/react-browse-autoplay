@@ -23,6 +23,7 @@
     "release": "changeset publish",
     "check": "biome check .",
     "format": "biome format --write",
+    "tsc": "tsc --project tsconfig.json",
     "lint": "biome lint ."
   },
   "keywords": [],
@@ -35,5 +36,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0"
   }
 }

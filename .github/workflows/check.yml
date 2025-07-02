@@ -16,3 +16,6 @@ jobs:
 
       - name: Run Checks
         run: pnpm check
+
+      - name: Run TSC
+        run: pnpm tsc
