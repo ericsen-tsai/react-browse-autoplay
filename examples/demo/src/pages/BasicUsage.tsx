@@ -1,9 +1,11 @@
 import { AutoplayAnchor, useBrowseAutoplay } from '@erichandsen/react-browse-autoplay';
 import ControlPanel from '../components/ControlPanel';
 import './PageStyles.css';
+import AudioDisableAutoplay from '../assets/audio-disable-autoplay.svg?react';
+import AudioEnableAutoplay from '../assets/audio-enable-autoplay.svg?react';
 
 const BasicUsage = () => {
-  const { isEnabledAutoplay, isMuted } = useBrowseAutoplay();
+  const { isEnabledAutoplay, isMuted, onToggleEnabledAutoplay } = useBrowseAutoplay();
 
   return (
     <div className="page">
@@ -29,6 +31,15 @@ const BasicUsage = () => {
               This demonstrates the core functionality of React Browse Autoplay. Scroll down to see the autoplay zone in
               action!
             </p>
+            <button
+              onClick={() => onToggleEnabledAutoplay()}
+              type="button"
+              className={`control-button autoplay-button ${isEnabledAutoplay ? 'enabled' : 'disabled'}`}
+              title={isEnabledAutoplay ? 'Disable autoplay' : 'Enable autoplay'}
+            >
+              {isEnabledAutoplay ? <AudioDisableAutoplay /> : <AudioEnableAutoplay />}
+              <span>{isEnabledAutoplay ? 'Disable' : 'Enable'} Autoplay</span>
+            </button>
           </div>
 
           <div className="spacer large">
@@ -56,28 +67,6 @@ const BasicUsage = () => {
                         ? 'Unmute to hear the music'
                         : 'Enjoy the ambient music!'}
                   </p>
-                </div>
-              </div>
-
-              <div className="feature-explanation">
-                <h3>What's happening?</h3>
-                <div className="explanation-grid">
-                  <div className="explanation-item">
-                    <h4>🎯 Anchor Detection</h4>
-                    <p>Top and bottom anchors define the autoplay boundaries</p>
-                  </div>
-                  <div className="explanation-item">
-                    <h4>📍 Scroll Tracking</h4>
-                    <p>Audio plays when viewport center is between anchors</p>
-                  </div>
-                  <div className="explanation-item">
-                    <h4>🎮 User Control</h4>
-                    <p>Users can toggle autoplay and mute at any time</p>
-                  </div>
-                  <div className="explanation-item">
-                    <h4>🔄 Smooth Transitions</h4>
-                    <p>Audio starts and stops based on scroll position</p>
-                  </div>
                 </div>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import { defineConfig } from 'rolldown';
+import { dts } from 'rolldown-plugin-dts';
 
 export default defineConfig({
   input: 'src/index.tsx',
@@ -13,4 +14,5 @@ export default defineConfig({
   treeshake: {
     moduleSideEffects: false,
   },
+  plugins: [dts()],
 });

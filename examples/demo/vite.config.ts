@@ -5,7 +5,7 @@ import svgr from 'vite-plugin-svgr';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), svgr()],
-  base: '/react-browse-autoplay/',
+  base: '/react-browse-autoplay',
   build: {
     outDir: 'dist',
     emptyOutDir: true,

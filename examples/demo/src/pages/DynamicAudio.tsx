@@ -1,9 +1,11 @@
 import { AutoplayAnchor, useBrowseAutoplay } from '@erichandsen/react-browse-autoplay';
 import ControlPanel from '../components/ControlPanel';
 import './PageStyles.css';
+import AudioDisableAutoplay from '../assets/audio-disable-autoplay.svg?react';
+import AudioEnableAutoplay from '../assets/audio-enable-autoplay.svg?react';
 
 const DynamicAudio = () => {
-  const { isEnabledAutoplay, isMuted, audioPath, onAudioPathChange } = useBrowseAutoplay();
+  const { isEnabledAutoplay, isMuted, audioPath, onAudioPathChange, onToggleEnabledAutoplay } = useBrowseAutoplay();
 
   // Mock audio options - in a real app, these would be actual audio files
   const audioOptions = [
@@ -27,19 +29,7 @@ const DynamicAudio = () => {
     <div className="page">
       <div className="page-container">
         <div className="page-sidebar">
-          <ControlPanel showAudioPath={true} audioOptions={audioOptions} />
-
-          <div className="info-card">
-            <h3>Dynamic Audio Switching</h3>
-            <p>
-              Change the audio source dynamically using the dropdown above. The audio will switch immediately if
-              autoplay is active.
-            </p>
-            <p>
-              This demonstrates how to dynamically switch between different audio sources within a single autoplay zone.
-            </p>
-          </div>
-
+          <ControlPanel />
           <div className="playlist-card">
             <h3>Audio Library</h3>
             <div className="playlist">
@@ -65,13 +55,22 @@ const DynamicAudio = () => {
               This showcase demonstrates how you can dynamically change audio sources while maintaining the autoplay
               functionality. Perfect for creating rich, interactive audio experiences.
             </p>
+
+            <button
+              onClick={() => onToggleEnabledAutoplay()}
+              type="button"
+              className={`control-button autoplay-button ${isEnabledAutoplay ? 'enabled' : 'disabled'}`}
+              title={isEnabledAutoplay ? 'Disable autoplay' : 'Enable autoplay'}
+            >
+              {isEnabledAutoplay ? <AudioDisableAutoplay /> : <AudioEnableAutoplay />}
+              <span>{isEnabledAutoplay ? 'Disable' : 'Enable'} Autoplay</span>
+            </button>
           </div>
 
           <div className="current-track-display">
             <div className="track-info">
               <h3>Currently Selected</h3>
               <div className="track-card">
-                <div className="track-icon">🎵</div>
                 <div className="track-details">
                   <h4>{currentAudio?.label || 'No audio selected'}</h4>
                   <p>{audioPath || 'Select an audio file from the sidebar'}</p>
@@ -80,7 +79,7 @@ const DynamicAudio = () => {
             </div>
           </div>
 
-          <div className="spacer medium">
+          <div className="spacer large">
             <div className="scroll-indicator">
               <p>⬇️ Scroll down to start playing selected audio ⬇️</p>
             </div>
@@ -92,63 +91,16 @@ const DynamicAudio = () => {
             <div className="zone-header">
               <h2>🎵 Dynamic Playback Zone</h2>
               <p>Audio changes based on your selection!</p>
+
+              <div className="audio-visualizer">
+                <div className={`wave ${isEnabledAutoplay && !isMuted ? 'active' : ''}`}></div>
+                <div className={`wave ${isEnabledAutoplay && !isMuted ? 'active' : ''}`}></div>
+                <div className={`wave ${isEnabledAutoplay && !isMuted ? 'active' : ''}`}></div>
+                <div className={`wave ${isEnabledAutoplay && !isMuted ? 'active' : ''}`}></div>
+              </div>
             </div>
 
             <div className="zone-content">
-              <div className="playback-status">
-                <div className="status-display">
-                  <div className="audio-visualizer">
-                    <div className={`wave ${isEnabledAutoplay && !isMuted ? 'active' : ''}`}></div>
-                    <div className={`wave ${isEnabledAutoplay && !isMuted ? 'active' : ''}`}></div>
-                    <div className={`wave ${isEnabledAutoplay && !isMuted ? 'active' : ''}`}></div>
-                    <div className={`wave ${isEnabledAutoplay && !isMuted ? 'active' : ''}`}></div>
-                  </div>
-
-                  <div className="status-text">
-                    <h3>
-                      {isEnabledAutoplay && !isMuted
-                        ? `🎵 Playing: ${currentAudio?.label || 'Unknown Track'}`
-                        : '⏸️ Playback Paused'}
-                    </h3>
-                    <p>
-                      {!audioPath
-                        ? 'Select an audio track from the sidebar to begin'
-                        : !isEnabledAutoplay
-                          ? 'Enable autoplay to start listening'
-                          : isMuted
-                            ? 'Unmute to hear the audio'
-                            : 'Enjoying your selected audio!'}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="feature-showcase">
-                <h3>Dynamic Audio Features</h3>
-                <div className="features-grid">
-                  <div className="feature-card">
-                    <div className="feature-icon">🔄</div>
-                    <h4>Instant Switching</h4>
-                    <p>Change audio sources on the fly without interrupting the experience</p>
-                  </div>
-                  <div className="feature-card">
-                    <div className="feature-icon">📱</div>
-                    <h4>Responsive Controls</h4>
-                    <p>Interactive playlist and dropdown controls for easy navigation</p>
-                  </div>
-                  <div className="feature-card">
-                    <div className="feature-icon">🎯</div>
-                    <h4>State Persistence</h4>
-                    <p>Audio selection persists across page navigation and interactions</p>
-                  </div>
-                  <div className="feature-card">
-                    <div className="feature-icon">⚡</div>
-                    <h4>Performance</h4>
-                    <p>Efficient audio loading and playback management</p>
-                  </div>
-                </div>
-              </div>
-
               <div className="code-example">
                 <h3>Implementation Example</h3>
                 <pre>

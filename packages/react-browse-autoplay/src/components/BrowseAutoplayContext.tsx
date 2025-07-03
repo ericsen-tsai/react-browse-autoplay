@@ -38,7 +38,16 @@ const BrowseAutoplayProvider = ({
   const onToggleEnabledAutoplay = useCallback(() => setIsEnabledAutoplay((prev) => !prev), []);
 
   const [audioPath, setAudioPath] = useState(initialAudioPath);
-  const onAudioPathChange = useCallback((path: string) => setAudioPath(path), []);
+  const onAudioPathChange = useCallback((path: string) => {
+    setAudioPath(path);
+  }, []);
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation> we want to play the audio when the audio path changes
+  useEffect(() => {
+    if (audioRef.current && isPlaying) {
+      audioRef.current.play();
+    }
+  }, [audioPath, isPlaying]);
 
   const topAnchorRef = useRef<HTMLDivElement>(null);
   const bottomAnchorRef = useRef<HTMLDivElement>(null);

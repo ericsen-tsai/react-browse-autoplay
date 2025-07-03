@@ -1,17 +1,18 @@
 .control-panel {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e1e5e9;
-  margin-bottom: 2rem;
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  margin-bottom: var(--spacing-xl);
   position: sticky;
-  top: 2rem;
+  top: var(--spacing-xl);
   z-index: 100;
+  font-family: inherit;
 }
 
 .control-section {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing-lg);
 }
 
 .control-section:last-child {
@@ -19,38 +20,40 @@
 }
 
 .control-section h3 {
-  margin: 0 0 1rem 0;
+  margin: 0 0 var(--spacing-md) 0;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #2d3748;
+  color: var(--text-primary);
+  font-family: inherit;
 }
 
 .control-buttons {
   display: flex;
-  gap: 1rem;
+  gap: var(--spacing-md);
   flex-wrap: wrap;
 }
 
 .control-button {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 8px;
-  background: white;
+  gap: var(--spacing-sm);
+  padding: 0.75rem var(--spacing-md);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--transition-normal);
   font-size: 0.9rem;
   font-weight: 500;
   min-width: 120px;
   justify-content: center;
+  font-family: inherit;
 }
 
 .control-button:hover {
-  border-color: #667eea;
+  border-color: var(--color-primary);
   transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+  box-shadow: var(--shadow-sm);
 }
 
 .control-button svg {
@@ -59,75 +62,77 @@
 }
 
 .control-button.muted {
-  border-color: #f56565;
-  color: #f56565;
+  border-color: var(--color-danger);
+  color: var(--color-danger);
 }
 
 .control-button.unmuted {
-  border-color: #48bb78;
-  color: #48bb78;
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
 }
 
 .autoplay-button.enabled {
-  border-color: #667eea;
-  color: #667eea;
-  background: #f7fafc;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--bg-overlay);
 }
 
 .autoplay-button.disabled {
-  border-color: #a0aec0;
-  color: #a0aec0;
+  border-color: var(--text-muted);
+  color: var(--text-muted);
 }
 
 .audio-select {
   width: 100%;
   padding: 0.75rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
   font-size: 0.9rem;
-  background: white;
+  background: var(--bg-surface);
   cursor: pointer;
-  transition: border-color 0.2s ease;
-  color: #242424;
+  transition: border-color var(--transition-normal);
+  color: var(--text-primary);
+  font-family: inherit;
 }
 
 .audio-select:hover {
-  border-color: #667eea;
+  border-color: var(--color-primary);
 }
 
 .audio-select:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--bg-overlay);
 }
 
 .status-section {
-  padding-top: 1rem;
-  border-top: 1px solid #e2e8f0;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
 }
 
 .status-indicator {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-  color: #242424;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+  font-family: inherit;
 }
 
 .status-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  transition: background-color 0.2s ease;
+  transition: background-color var(--transition-normal);
 }
 
 .status-dot.playing {
-  background: #48bb78;
+  background: var(--color-secondary);
   animation: pulse 2s infinite;
 }
 
 .status-dot.paused {
-  background: #a0aec0;
+  background: var(--text-muted);
 }
 
 @keyframes pulse {
@@ -144,16 +149,18 @@
 
 .status-info {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: var(--spacing-xs);
   font-size: 0.85rem;
-  color: #718096;
+  color: var(--text-muted);
+  font-family: inherit;
+  flex-direction: column;
+  align-items: start;
 }
 
 @media (max-width: 768px) {
   .control-panel {
     position: static;
-    padding: 1rem;
+    padding: var(--spacing-md);
   }
   
   .control-buttons {
@@ -166,6 +173,6 @@
   
   .status-info {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--spacing-sm);
   }
 } 
