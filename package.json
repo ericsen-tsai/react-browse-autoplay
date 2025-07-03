@@ -5,6 +5,7 @@
   "packageManager": "pnpm@10.12.4",
   "scripts": {
     "dev:demo": "pnpm --filter demo dev",
+    "preview:demo": "pnpm --filter demo preview",
     "build:package": "pnpm --filter @erichandsen/react-browse-autoplay build",
     "build:demo": "pnpm --filter demo build",
     "test:package": "pnpm --filter @erichandsen/react-browse-autoplay test",

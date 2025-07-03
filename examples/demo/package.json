@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "build": "tsc --build && vite build",
     "lint": "biome lint .",
     "check": "biome check .",
-    "tsc": "tsc --noEmit",
+    "tsc": "tsc --build --dry",
     "format": "biome format --write",
     "preview": "vite preview"
   },
