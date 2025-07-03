@@ -64,28 +64,23 @@ describe('Integration Tests', () => {
     expect(divElements.length).toBeGreaterThan(0);
   });
 
-  it('should work with multiple anchor pairs', () => {
-    function MultipleAnchorsTest() {
+  it('should render single autoplay zone with top and bottom anchors', () => {
+    function SingleZoneTest() {
       return (
         <BrowseAutoplayProvider>
-          <div data-testid="section1">
+          <div data-testid="autoplay-zone">
             <AutoplayAnchor type="top" />
-            <div>Section 1 content</div>
-            <AutoplayAnchor type="bottom" />
-          </div>
-          <div data-testid="section2">
-            <AutoplayAnchor type="top" />
-            <div>Section 2 content</div>
+            <div>Content within autoplay zone</div>
             <AutoplayAnchor type="bottom" />
           </div>
         </BrowseAutoplayProvider>
       );
     }
 
-    render(<MultipleAnchorsTest />);
+    render(<SingleZoneTest />);
 
-    expect(screen.getByTestId('section1')).toBeInTheDocument();
-    expect(screen.getByTestId('section2')).toBeInTheDocument();
+    expect(screen.getByTestId('autoplay-zone')).toBeInTheDocument();
+    expect(screen.getByText('Content within autoplay zone')).toBeInTheDocument();
   });
 
   it('should handle provider without initial audio path', () => {

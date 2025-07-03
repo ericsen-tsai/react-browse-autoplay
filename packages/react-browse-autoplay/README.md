@@ -180,36 +180,36 @@ function Controls() {
 
 ## Advanced Usage
 
-### Multiple Audio Zones
+### Dynamic Audio Switching
 
-You can create multiple autoplay zones by using different audio paths:
+You can change the audio source dynamically using the `onAudioPathChange` function:
 
 ```tsx
-function MultiZoneExample() {
-  const { onAudioPathChange } = useBrowseAutoplay();
+function DynamicAudioExample() {
+  const { onAudioPathChange, audioPath } = useBrowseAutoplay();
+
+  const audioOptions = [
+    { path: 'https://example.com/forest.mp3', label: 'Forest Sounds' },
+    { path: 'https://example.com/ocean.mp3', label: 'Ocean Waves' },
+    { path: 'https://example.com/rain.mp3', label: 'Rain Sounds' }
+  ];
 
   return (
     <div>
-      {/* First audio zone */}
-      <AutoplayAnchor type="top" />
-      <div 
-        style={{ height: '100vh' }}
-        onMouseEnter={() => onAudioPathChange('https://example.com/audio1.mp3')}
+      <select 
+        value={audioPath} 
+        onChange={(e) => onAudioPathChange(e.target.value)}
       >
-        Zone 1 - Peaceful music
-      </div>
-      <AutoplayAnchor type="bottom" />
+        {audioOptions.map((option) => (
+          <option key={option.path} value={option.path}>
+            {option.label}
+          </option>
+        ))}
+      </select>
 
-      {/* Gap between zones */}
-      <div style={{ height: '50vh' }} />
-
-      {/* Second audio zone */}
       <AutoplayAnchor type="top" />
-      <div 
-        style={{ height: '100vh' }}
-        onMouseEnter={() => onAudioPathChange('https://example.com/audio2.mp3')}
-      >
-        Zone 2 - Upbeat music
+      <div style={{ height: '100vh' }}>
+        Content with switchable audio
       </div>
       <AutoplayAnchor type="bottom" />
     </div>

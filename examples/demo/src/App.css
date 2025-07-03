@@ -4,3 +4,12 @@
   padding: 2rem;
   text-align: center;
 }
+
+.app {
+  min-height: 100vh;
+  background: #242424;
+}
+
+.app-main {
+  /* Navigation component has its own styling and spacing */
+}
