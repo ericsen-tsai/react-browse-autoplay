@@ -6,12 +6,12 @@ const Navigation = () => {
 
   const navItems = [
     {
-      path: '/react-browse-autoplay',
+      path: import.meta.env.VITE_DEMO_PAGE_BASE_URL,
       label: 'Basic Usage',
       description: 'Simple autoplay example',
     },
     {
-      path: '/react-browse-autoplay/dynamic-audio',
+      path: `${import.meta.env.VITE_DEMO_PAGE_BASE_URL}/dynamic-audio`,
       label: 'Dynamic Audio',
       description: 'Switch audio sources',
     },

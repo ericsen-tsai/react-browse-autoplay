@@ -10,15 +10,15 @@ const DynamicAudio = () => {
   // Mock audio options - in a real app, these would be actual audio files
   const audioOptions = [
     {
-      value: '/react-browse-autoplay/audio/ambient-forest.mp3',
+      value: `${import.meta.env.VITE_DEMO_PAGE_BASE_URL}/audio/ambient-forest.mp3`,
       label: '🌲 Forest Ambience',
     },
     {
-      value: '/react-browse-autoplay/audio/ocean-waves.mp3',
+      value: `${import.meta.env.VITE_DEMO_PAGE_BASE_URL}/audio/ocean-waves.mp3`,
       label: '🌊 Ocean Waves',
     },
     {
-      value: '/react-browse-autoplay/audio/rain-sounds.mp3',
+      value: `${import.meta.env.VITE_DEMO_PAGE_BASE_URL}/audio/rain-sounds.mp3`,
       label: '🌧️ Rain Sounds',
     },
   ];
@@ -79,7 +79,7 @@ const DynamicAudio = () => {
             </div>
           </div>
 
-          <div className="spacer large">
+          <div className="spacer medium">
             <div className="scroll-indicator">
               <p>⬇️ Scroll down to start playing selected audio ⬇️</p>
             </div>

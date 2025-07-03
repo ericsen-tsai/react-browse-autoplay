@@ -42,7 +42,7 @@ const BasicUsage = () => {
             </button>
           </div>
 
-          <div className="spacer large">
+          <div className="spacer medium">
             <div className="scroll-indicator">
               <p>⬇️ Scroll down to experience autoplay ⬇️</p>
             </div>
