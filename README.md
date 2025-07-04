@@ -149,7 +149,7 @@ The package is published to NPM as `@erichandsen/react-browse-autoplay`.
 2. Create a feature branch: `git checkout -b feature/my-feature`
 3. Make your changes
 4. Run tests: `pnpm run test:package`
-5. Commit your changes: `git commit -m 'Add some feature'`
+5. Commit your changes: `git commit -m 'feat: add some feature'`
 6. Push to the branch: `git push origin feature/my-feature`
 7. Submit a pull request
 
