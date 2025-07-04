@@ -10,22 +10,24 @@
     "check": "biome check .",
     "tsc": "tsc --build --dry",
     "format": "biome format --write",
-    "preview": "vite preview",
+    "preview": "pnpm with-env vite preview",
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
+    "@erichandsen/react-browse-autoplay": "workspace:*",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router-dom": "^7.1.0",
-    "@erichandsen/react-browse-autoplay": "workspace:*"
+    "react-router-dom": "^7.1.0"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.5.2",
+    "dotenv-cli": "^8.0.0",
+    "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3",
     "vite": "^7.0.0",
-    "vite-plugin-svgr": "^4.2.0",
-    "dotenv-cli": "^8.0.0"
+    "vite-plugin-svgr": "^4.2.0"
   }
 }
