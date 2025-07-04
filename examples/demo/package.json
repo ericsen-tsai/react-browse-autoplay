@@ -29,5 +29,6 @@
     "typescript": "^5.8.3",
     "vite": "^7.0.0",
     "vite-plugin-svgr": "^4.2.0"
-  }
+  },
+  "homepage": "https://ericsen-tsai.github.io/react-browse-autoplay"
 }
