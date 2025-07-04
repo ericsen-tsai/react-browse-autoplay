@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 
-const Navigation = () => {
+function Navigation() {
   const location = useLocation();
 
   const navItems = [
@@ -18,34 +18,34 @@ const Navigation = () => {
 
   return (
     <nav
-      className="text-custom-inverse px-8 py-8 mb-8 rounded-xl shadow-custom-lg"
+      className="mb-8 rounded-xl px-8 py-8 text-typography-inverse shadow-lg"
       style={{
         background: 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%)',
       }}
     >
-      <div className="text-center mb-8">
-        <h1 className="m-0 mb-2 text-4xl md:text-responsive-xl font-bold shadow-md">React Browse Autoplay Demo</h1>
-        <p className="m-0 text-lg opacity-90 font-light">
+      <div className="mb-8 text-center">
+        <h1 className="m-0 mb-2 font-bold text-4xl md:text-2xl">React Browse Autoplay Demo</h1>
+        <p className="m-0 font-light text-lg opacity-90">
           Interactive showcase of scroll-based audio autoplay features
         </p>
       </div>
-      <ul className="list-none p-0 m-0 grid grid-cols-1 md:grid-cols-2 gap-4 grid-responsive">
+      <ul className="m-0 grid list-none grid-cols-1 gap-4 p-0 text-center md:grid-cols-2">
         {navItems.map((item) => (
           <li
             key={item.path}
-            className={`rounded-lg overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-custom-md ${
-              location.pathname === item.path ? 'bg-custom-overlay shadow-custom-md' : ''
+            className={`hover:-translate-y-0.5 overflow-hidden rounded-lg transition-all hover:shadow-md ${
+              location.pathname === item.path ? 'border border-border bg-bg-overlay shadow-lg' : ''
             }`}
           >
             <Link
               to={item.path}
-              className={`block px-6 py-6 md:px-4 text-custom-inverse-muted no-underline transition-all duration-200 rounded-lg hover:bg-custom-overlay ${
-                location.pathname === item.path ? 'text-custom-inverse' : 'hover:text-custom-inverse'
+              className={`block rounded-lg px-6 py-6 text-typography-inverse-muted no-underline transition-all hover:bg-bg-overlay md:px-4 ${
+                location.pathname === item.path ? 'text-typography-inverse' : 'hover:text-typography-inverse'
               }`}
             >
               <div className="flex flex-col gap-2">
-                <strong className="text-xl font-semibold">{item.label}</strong>
-                <span className="text-sm opacity-80 font-light">{item.description}</span>
+                <strong className="font-semibold text-xl">{item.label}</strong>
+                <span className="font-light text-sm opacity-80">{item.description}</span>
               </div>
             </Link>
           </li>
@@ -53,6 +53,6 @@ const Navigation = () => {
       </ul>
     </nav>
   );
-};
+}
 
 export default Navigation;

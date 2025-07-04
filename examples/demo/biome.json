@@ -1,3 +1,10 @@
 {
-  "extends": "//"
+  "extends": "//",
+  "linter": {
+    "rules": {
+      "nursery": {
+        "useSortedClasses": "error"
+      }
+    }
+  }
 }

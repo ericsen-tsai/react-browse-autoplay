@@ -5,9 +5,9 @@ import DynamicAudio from './pages/DynamicAudio';
 
 function App() {
   return (
-    <div className="min-h-screen bg-custom-primary">
+    <div className="min-h-screen bg-bg-primary px-8">
       <Navigation />
-      <main className="max-w-7xl mx-auto px-8 text-center">
+      <main className="mx-auto max-w-7xl text-center">
         <Routes>
           <Route path={import.meta.env.VITE_DEMO_PAGE_BASE_URL} element={<BasicUsage />} />
           <Route path={`${import.meta.env.VITE_DEMO_PAGE_BASE_URL}/dynamic-audio`} element={<DynamicAudio />} />
