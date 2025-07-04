@@ -1,6 +1,6 @@
 {
   "name": "@erichandsen/react-browse-autoplay",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A React component that automatically plays videos in a browser.",
   "main": "dist/index.js",
   "module": "dist/index.js",
