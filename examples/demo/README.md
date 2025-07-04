@@ -4,7 +4,7 @@ This is a live demo application showcasing the React Browse Autoplay component l
 
 ## 🌐 Live Demo
 
-Visit the live demo at: **[https://erichandsen.github.io/react-browse-autoplay/](https://erichandsen.github.io/react-browse-autoplay/)**
+Visit the live demo at: **[https://ericsen-tsai.github.io/react-browse-autoplay/](https://ericsen-tsai.github.io/react-browse-autoplay/)**
 
 ## What This Demo Shows
 

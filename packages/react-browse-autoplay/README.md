@@ -13,7 +13,7 @@ A React component library that automatically plays audio when users scroll betwe
 
 ## 🌐 Live Demo
 
-Try the interactive demo: **[https://erichandsen.github.io/react-browse-autoplay/](https://erichandsen.github.io/react-browse-autoplay/)**
+Try the interactive demo: **[https://ericsen-tsai.github.io/react-browse-autoplay/](https://ericsen-tsai.github.io/react-browse-autoplay/)**
 
 ## Installation
 
